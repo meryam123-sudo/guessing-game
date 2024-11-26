@@ -1,0 +1,12 @@
+SCRIPT=guessinggame.sh
+README=README.md
+DATE=$(date)
+NUM_LINES=$(wc -l < $(SCRIPT))
+
+all: $(README)
+
+
+$(README):
+	echo "# Projet Guessing Game" > $(README)
+	echo "Date d'exécution : $(DATE)" >> $(README)
+	echo "Nombre de lignes de code dans $(SCRIPT) : $(NUM_LINES)" >> $(README)

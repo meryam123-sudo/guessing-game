@@ -1,0 +1,26 @@
+#!/bin/bash
+
+
+guessing_game() {
+ 
+  local num_files=$(ls -1 | wc -l)
+  local guess=-1
+
+  
+  while [[ $guess -ne $num_files ]]; do
+    echo "Combien de fichiers se trouvent dans le répertoire actuel?"
+    read guess
+
+    
+    if [[ $guess -lt $num_files ]]; then
+      echo "Trop bas! Essayez encore."
+    elif [[ $guess -gt $num_files ]]; then
+      echo "Trop haut! Essayez encore."
+    else
+      echo "Félicitations, vous avez trouvé le bon nombre de fichiers!"
+    fi
+  done
+}
+
+
+guessing_game
